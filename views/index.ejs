@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Star Wars App!</title>
+  </head>
+  <body>
+    <h1>May the Node be with you!</h1>
+    <form action="/quotes" method="POST">
+      <input type="text" placeholder="name" name="name" value="">
+      <input type="text" placeholder="quote" name="quote" value="">
+      <button type="submit">Submit</button>
+    </form>
+
+    <h2>Quotes</h2>
+    <ul class = 'quotes'>
+        <% for(var i = 0; i < quotes.length; i++){%>
+            <li class = 'quote'>
+                <span><%= quotes[i].name %></span>:
+                <span><%= quotes[i].quote %></span>
+            </li>
+        <% } %>
+    </ul>
+    <div>
+      <h2>Darth Vader invades!</h2>
+      <p>Replace the first quote with Darth Vader's quote</p>
+      <button id = "update-button">Replace Yoda Quote</button>
+    </div>
+    <div>
+      <h2>Remove Darth Vader!</h2>
+      <p>Delete one Vader quote. Nothing happens if no more Vader quotes!</p>
+      <button id="delete-button">Delete quote</button>
+    </div>
+    <div id="message"></div>
+    <script src="/main.js"></script>
+  </body>
+</html>
